@@ -8,7 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-
+/**
+ * Author : Joanne Jung
+ * Student # : 300432364
+ * Date : August, 19th, 2016
+ * Description : Main program for Movie Bonanza Online Streaming
+ * Version : 0.0.3 : Added and connected StreamForm
+ */
 namespace COMP123_Assignment4_MovieBonanza
 {
     public partial class SelectionForm : Form
@@ -34,10 +40,9 @@ namespace COMP123_Assignment4_MovieBonanza
         {
 
         }
-
-        private void CurrentListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private string currentItem;
+        public void movieSelection(string movieTitle)
         {
-            TitleTextBox.Text = CurrentListBox.SelectedItem.ToString();
             switch (CurrentListBox.SelectedItem.ToString())
             {
                 case "Season of the Witch":
@@ -140,8 +145,13 @@ namespace COMP123_Assignment4_MovieBonanza
                     CategoryTextBox.Text = "Comedy";
                     CostTextBox.Text = "$1.99";
                     break;
-
             }
+        }
+        private void CurrentListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TitleTextBox.Text = CurrentListBox.SelectedItem.ToString();
+            currentItem = CurrentListBox.SelectedItem.ToString();
+            movieSelection(currentItem);
         }
 
         private void NextButton_Click(object sender, EventArgs e)
@@ -151,6 +161,8 @@ namespace COMP123_Assignment4_MovieBonanza
             orderForm.MovieTitles = this.TitleTextBox.Text;
             orderForm.MovieCategory = this.CategoryTextBox.Text;
             orderForm.MovieCost = this.CostTextBox.Text;
+            orderForm.MoviePicture = this.SelectedMoviePictureBox.Image;
+
             orderForm.Show();
             this.Hide();
         }

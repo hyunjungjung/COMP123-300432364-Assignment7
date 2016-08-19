@@ -224,9 +224,9 @@
         private System.Windows.Forms.Label CostLabel;
         private System.Windows.Forms.TextBox CategoryTextBox;
         private System.Windows.Forms.Label CategoryLabel;
-        private System.Windows.Forms.TextBox TitleTextBox;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.PictureBox SelectedMoviePictureBox;
+        public System.Windows.Forms.TextBox TitleTextBox;
     }
 }
 

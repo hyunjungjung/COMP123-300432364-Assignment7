@@ -12,29 +12,31 @@ using System.Windows.Forms;
  * Student # : 300432364
  * Date : August, 19th, 2016
  * Description : Main program for Movie Bonanza Online Streaming
- * Version : 0.0.2 : Added and connected OrderForm with SelectionForm
+ * Version : 0.0.3 : Added and connected StreamForm
  */
 namespace COMP123_Assignment4_MovieBonanza
 {
 
     public partial class OrderForm : Form
     {
+        private string _movieTitle, _movieCategory, _movieCost;
         public SelectionForm selectionForm { get; set; }
         public string MovieTitles
         {
-            get;
-            set;
+            get { return _movieTitle; }
+            set { _movieTitle = value; }
         }
         public string MovieCategory
         {
-            get;
-            set;
+            get { return _movieCategory; }
+            set { _movieCategory = value; }
         }
         public string MovieCost
         {
-            get;
-            set;
+            get { return _movieCost; }
+            set { _movieCost = value; }
         }
+        public Image MoviePicture{ get; set; }
 
         public OrderForm()
         {
@@ -46,7 +48,7 @@ namespace COMP123_Assignment4_MovieBonanza
         {
             this.selectionForm.Show();
             this.Close();
-           
+
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -57,9 +59,57 @@ namespace COMP123_Assignment4_MovieBonanza
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
-            OrderTitleTextBox.Text = MovieTitles;
-            OrderCategoryTextBox.Text = MovieCategory;
-            OrderCostTextBox.Text = MovieCost;
+            OrderTitleTextBox.Text = _movieTitle;
+            OrderCategoryTextBox.Text = _movieCategory;
+            OrderCostTextBox.Text = _movieCost;
+            OrderMoviePictureBox.Image = MoviePicture;
+
+            double tax = Convert.ToDouble(OrderSubTotalTextBox.Text) * 0.13;
+            tax = Math.Round(tax, 2);
+            OrderSubTotalTextBox.Text = tax.ToString();
+
+            double subTotal = Convert.ToDouble(OrderCostTextBox.Text);
+            OrderAddTextBox.Text = subTotal.ToString();
+        }
+
+        private void OrderCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+            if (OrderCheckBox.Checked == true)
+            {
+                OrderAddLabel.Visible = true;
+                OrderAddTextBox.Visible = true;
+                double subTotal = Convert.ToDouble(OrderCostTextBox.Text);
+                OrderAddTextBox.Text = subTotal.ToString();
+
+            }
+            else
+            {
+                OrderAddLabel.Visible = false;
+                OrderAddTextBox.Visible = false;
+
+            }
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            // show dialog
+            aboutBox.ShowDialog();
+        }
+
+        private void StreamButton_Click(object sender, EventArgs e)
+        {
+            
+            StreamForm streamForm = new StreamForm();
+            streamForm.orderForm = this;
+            streamForm.StreamCostTextBox.Text = OrderGrandTotalTextBox.Text;
+            streamForm.StreamTitleTextBox.Text = OrderTitleTextBox.Text;
+            streamForm.Show();
+            this.Hide();
+
         }
     }
 }

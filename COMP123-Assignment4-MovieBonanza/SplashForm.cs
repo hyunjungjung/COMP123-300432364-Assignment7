@@ -12,7 +12,7 @@ using System.Windows.Forms;
  * Student # : 300432364
  * Date : August, 19th, 2016
  * Description : Main program for Movie Bonanza Online Streaming
- * Version : 0.0.2 : Added and connected OrderForm with SelectionForm
+ * Version : 0.0.3 : Added and connected StreamForm
  */
 namespace COMP123_Assignment4_MovieBonanza
 {
