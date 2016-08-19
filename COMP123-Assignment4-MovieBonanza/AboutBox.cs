@@ -10,8 +10,8 @@ using System.Windows.Forms;
  * Author : Joanne Jung
  * Student # : 300432364
  * Date : August, 19th, 2016
- * Description : Main program for Movie Bonanza Online Streaming
- * Version : 0.0.3 : Added and connected StreamForm
+ * Description : AboutBox for Movie Bonanza Online Streaming
+ * Version : 0.0.4 : Final commit
  */
 namespace COMP123_Assignment4_MovieBonanza
 {
@@ -21,11 +21,12 @@ namespace COMP123_Assignment4_MovieBonanza
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.ProgrammerName.Text = "Programmer's Name : Joanne Jung";
+            this.labelVersion.Text = String.Format("Version :", AssemblyVersion);
+            this.labelWebsite.Text = ": Website : www.moviestream.ca";
+            this.labelContactNumber.Text = "Contact number : 1-888-985-9854";
+            this.textDescription.Text = "Description : Enjoy it!";
+
         }
 
         #region Assembly Attribute Accessors
@@ -109,6 +110,11 @@ namespace COMP123_Assignment4_MovieBonanza
         #endregion
 
         private void AboutBox_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProgrammerName_Click(object sender, EventArgs e)
         {
 
         }

@@ -30,11 +30,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
-            this.labelProductName = new System.Windows.Forms.Label();
+            this.ProgrammerName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
-            this.labelCopyright = new System.Windows.Forms.Label();
-            this.labelCompanyName = new System.Windows.Forms.Label();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.labelWebsite = new System.Windows.Forms.Label();
+            this.labelContactNumber = new System.Windows.Forms.Label();
+            this.textDescription = new System.Windows.Forms.TextBox();
             this.okButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
@@ -46,11 +46,11 @@
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
             this.tableLayoutPanel.Controls.Add(this.logoPictureBox, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.labelProductName, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.ProgrammerName, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.labelVersion, 1, 1);
-            this.tableLayoutPanel.Controls.Add(this.labelCopyright, 1, 2);
-            this.tableLayoutPanel.Controls.Add(this.labelCompanyName, 1, 3);
-            this.tableLayoutPanel.Controls.Add(this.textBoxDescription, 1, 4);
+            this.tableLayoutPanel.Controls.Add(this.labelWebsite, 1, 2);
+            this.tableLayoutPanel.Controls.Add(this.labelContactNumber, 1, 3);
+            this.tableLayoutPanel.Controls.Add(this.textDescription, 1, 4);
             this.tableLayoutPanel.Controls.Add(this.okButton, 1, 5);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,17 +78,18 @@
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;
             // 
-            // labelProductName
+            // ProgrammerName
             // 
-            this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelProductName.Location = new System.Drawing.Point(143, 0);
-            this.labelProductName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelProductName.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(271, 17);
-            this.labelProductName.TabIndex = 19;
-            this.labelProductName.Text = "Programmer\'s Name : Joanne Jung";
-            this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ProgrammerName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProgrammerName.Location = new System.Drawing.Point(143, 0);
+            this.ProgrammerName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.ProgrammerName.MaximumSize = new System.Drawing.Size(0, 17);
+            this.ProgrammerName.Name = "ProgrammerName";
+            this.ProgrammerName.Size = new System.Drawing.Size(271, 17);
+            this.ProgrammerName.TabIndex = 19;
+            this.ProgrammerName.Text = "Programmer\'s Name : Joanne Jung";
+            this.ProgrammerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ProgrammerName.Click += new System.EventHandler(this.ProgrammerName_Click);
             // 
             // labelVersion
             // 
@@ -102,43 +103,43 @@
             this.labelVersion.Text = "Version : 1.0";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelCopyright
+            // labelWebsite
             // 
-            this.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCopyright.Location = new System.Drawing.Point(143, 52);
-            this.labelCopyright.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(271, 17);
-            this.labelCopyright.TabIndex = 21;
-            this.labelCopyright.Text = "Website : www.moviestream.ca";
-            this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelWebsite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelWebsite.Location = new System.Drawing.Point(143, 52);
+            this.labelWebsite.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.labelWebsite.MaximumSize = new System.Drawing.Size(0, 17);
+            this.labelWebsite.Name = "labelWebsite";
+            this.labelWebsite.Size = new System.Drawing.Size(271, 17);
+            this.labelWebsite.TabIndex = 21;
+            this.labelWebsite.Text = "Website : www.moviestream.ca";
+            this.labelWebsite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelCompanyName
+            // labelContactNumber
             // 
-            this.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCompanyName.Location = new System.Drawing.Point(143, 78);
-            this.labelCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelCompanyName.Name = "labelCompanyName";
-            this.labelCompanyName.Size = new System.Drawing.Size(271, 17);
-            this.labelCompanyName.TabIndex = 22;
-            this.labelCompanyName.Text = "Contact number : 1-888-985-9854";
-            this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelContactNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelContactNumber.Location = new System.Drawing.Point(143, 78);
+            this.labelContactNumber.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.labelContactNumber.MaximumSize = new System.Drawing.Size(0, 17);
+            this.labelContactNumber.Name = "labelContactNumber";
+            this.labelContactNumber.Size = new System.Drawing.Size(271, 17);
+            this.labelContactNumber.TabIndex = 22;
+            this.labelContactNumber.Text = "Contact number : 1-888-985-9854";
+            this.labelContactNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBoxDescription
+            // textDescription
             // 
-            this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDescription.Location = new System.Drawing.Point(143, 107);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.ReadOnly = true;
-            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(271, 126);
-            this.textBoxDescription.TabIndex = 23;
-            this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "Description\r\n\r\nEnjoy it!";
+            this.textDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textDescription.Location = new System.Drawing.Point(143, 107);
+            this.textDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.textDescription.Multiline = true;
+            this.textDescription.Name = "textDescription";
+            this.textDescription.ReadOnly = true;
+            this.textDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textDescription.Size = new System.Drawing.Size(271, 126);
+            this.textDescription.TabIndex = 23;
+            this.textDescription.TabStop = false;
+            this.textDescription.Text = "Description\r\n\r\nEnjoy it!";
             // 
             // okButton
             // 
@@ -178,11 +179,11 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.PictureBox logoPictureBox;
-        private System.Windows.Forms.Label labelProductName;
+        private System.Windows.Forms.Label ProgrammerName;
         private System.Windows.Forms.Label labelVersion;
-        private System.Windows.Forms.Label labelCopyright;
-        private System.Windows.Forms.Label labelCompanyName;
-        private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.Label labelWebsite;
+        private System.Windows.Forms.Label labelContactNumber;
+        private System.Windows.Forms.TextBox textDescription;
         private System.Windows.Forms.Button okButton;
     }
 }

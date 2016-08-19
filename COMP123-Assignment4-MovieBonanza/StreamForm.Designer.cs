@@ -39,33 +39,33 @@
             // StreamLabel1
             // 
             this.StreamLabel1.AutoSize = true;
-            this.StreamLabel1.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StreamLabel1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StreamLabel1.Location = new System.Drawing.Point(13, 13);
             this.StreamLabel1.Name = "StreamLabel1";
-            this.StreamLabel1.Size = new System.Drawing.Size(401, 29);
+            this.StreamLabel1.Size = new System.Drawing.Size(355, 26);
             this.StreamLabel1.TabIndex = 0;
             this.StreamLabel1.Text = "Thank you for coosing Movie Bonanza!";
             // 
             // StreamLabel2
             // 
             this.StreamLabel2.AutoSize = true;
-            this.StreamLabel2.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StreamLabel2.Location = new System.Drawing.Point(27, 83);
+            this.StreamLabel2.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StreamLabel2.Location = new System.Drawing.Point(14, 83);
             this.StreamLabel2.Name = "StreamLabel2";
-            this.StreamLabel2.Size = new System.Drawing.Size(222, 19);
+            this.StreamLabel2.Size = new System.Drawing.Size(262, 23);
             this.StreamLabel2.TabIndex = 1;
             this.StreamLabel2.Text = "Your credit card will be charged";
             // 
             // StreamCostTextBox
             // 
-            this.StreamCostTextBox.Location = new System.Drawing.Point(277, 83);
+            this.StreamCostTextBox.Location = new System.Drawing.Point(282, 83);
             this.StreamCostTextBox.Name = "StreamCostTextBox";
-            this.StreamCostTextBox.Size = new System.Drawing.Size(100, 23);
+            this.StreamCostTextBox.Size = new System.Drawing.Size(84, 23);
             this.StreamCostTextBox.TabIndex = 2;
             // 
             // StreamTitleTextBox
             // 
-            this.StreamTitleTextBox.Location = new System.Drawing.Point(138, 129);
+            this.StreamTitleTextBox.Location = new System.Drawing.Point(18, 129);
             this.StreamTitleTextBox.Name = "StreamTitleTextBox";
             this.StreamTitleTextBox.Size = new System.Drawing.Size(130, 23);
             this.StreamTitleTextBox.TabIndex = 3;
@@ -73,16 +73,16 @@
             // StreamLabel3
             // 
             this.StreamLabel3.AutoSize = true;
-            this.StreamLabel3.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StreamLabel3.Location = new System.Drawing.Point(105, 155);
+            this.StreamLabel3.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StreamLabel3.Location = new System.Drawing.Point(154, 126);
             this.StreamLabel3.Name = "StreamLabel3";
-            this.StreamLabel3.Size = new System.Drawing.Size(196, 19);
+            this.StreamLabel3.Size = new System.Drawing.Size(231, 23);
             this.StreamLabel3.TabIndex = 4;
             this.StreamLabel3.Text = "will begin streaming shortly";
             // 
             // OkButton
             // 
-            this.OkButton.Location = new System.Drawing.Point(174, 245);
+            this.OkButton.Location = new System.Drawing.Point(146, 179);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(75, 23);
             this.OkButton.TabIndex = 5;
@@ -94,7 +94,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 301);
+            this.BackColor = System.Drawing.Color.Honeydew;
+            this.ClientSize = new System.Drawing.Size(389, 243);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.StreamLabel3);
             this.Controls.Add(this.StreamTitleTextBox);
@@ -103,6 +104,7 @@
             this.Controls.Add(this.StreamLabel1);
             this.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "StreamForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Your Movie is about to start!";
             this.Load += new System.EventHandler(this.StreamForm_Load);
             this.ResumeLayout(false);

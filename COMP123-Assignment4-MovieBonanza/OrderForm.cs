@@ -11,14 +11,15 @@ using System.Windows.Forms;
  * Author : Joanne Jung
  * Student # : 300432364
  * Date : August, 19th, 2016
- * Description : Main program for Movie Bonanza Online Streaming
- * Version : 0.0.3 : Added and connected StreamForm
+ * Description : OrderForm for Movie Bonanza Online Streaming
+ * Version : 0.0.4 : Final commit
  */
 namespace COMP123_Assignment4_MovieBonanza
 {
 
     public partial class OrderForm : Form
     {
+        
         private string _movieTitle, _movieCategory, _movieCost;
         public SelectionForm selectionForm { get; set; }
         public string MovieTitles
@@ -63,34 +64,61 @@ namespace COMP123_Assignment4_MovieBonanza
             OrderCategoryTextBox.Text = _movieCategory;
             OrderCostTextBox.Text = _movieCost;
             OrderMoviePictureBox.Image = MoviePicture;
+            CalculateTotal();
 
-            double tax = Convert.ToDouble(OrderSubTotalTextBox.Text) * 0.13;
-            tax = Math.Round(tax, 2);
-            OrderSubTotalTextBox.Text = tax.ToString();
-
-            double subTotal = Convert.ToDouble(OrderCostTextBox.Text);
-            OrderAddTextBox.Text = subTotal.ToString();
         }
-
-        private void OrderCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void CalculateTotal()
         {
-
-
+            decimal cost = decimal.Parse(OrderCostTextBox.Text, System.Globalization.NumberStyles.Currency);
+            double subTotal = 0;
+            double tax = 0.13;
             if (OrderCheckBox.Checked == true)
             {
                 OrderAddLabel.Visible = true;
                 OrderAddTextBox.Visible = true;
-                double subTotal = Convert.ToDouble(OrderCostTextBox.Text);
-                OrderAddTextBox.Text = subTotal.ToString();
 
+                subTotal = double.Parse(OrderCostTextBox.Text, System.Globalization.NumberStyles.Currency) + 10;
+                tax *= (double)subTotal;
+                OrderAddTextBox.Text = "$10.00";
+                OrderTaxTextBox.Text = string.Format("{0:c}", tax);
+                OrderSubTotalTextBox.Text = string.Format("{0:c}", subTotal);
+                OrderGrandTotalTextBox.Text = string.Format("{0:c}", (tax + (double)subTotal));
             }
             else
             {
                 OrderAddLabel.Visible = false;
                 OrderAddTextBox.Visible = false;
 
+                subTotal = (double)cost;
+                tax *= (double)subTotal;
+                OrderSubTotalTextBox.Text = string.Format("{0:c}", subTotal);
+                OrderTaxTextBox.Text = string.Format("{0:c}", tax);
+                OrderGrandTotalTextBox.Text = string.Format("{0:c}", (tax + (double)subTotal));
             }
 
+        }
+
+        private void OrderCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+            CalculateTotal();
+
+        }
+
+        private void streamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StreamButton_Click(sender, e);
+        }
+
+        private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackButton_Click(sender, e);
+           
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Your order detail will be printed");
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
